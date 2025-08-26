@@ -40,12 +40,11 @@ export default function Footer() {
     <footer className="bg-gray-900 text-white p-4 text-center">
       <div className="flex justify-center space-x-4 flex-wrap">
         {menuItems.map((item, idx) => {
-          // Extract pathname only (e.g. "/about-us") to avoid redirecting to WordPress
           let pathname = ''
           try {
             pathname = new URL(item.url).pathname.replace(/\/$/, '')
           } catch (e) {
-            pathname = item.url // fallback
+            pathname = item.url
           }
 
           return (
@@ -59,4 +58,3 @@ export default function Footer() {
     </footer>
   )
 }
-
